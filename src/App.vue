@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker" />
-    <Tasks :tasks="tasks" @delete-task="deleteTask" />
+    <Tasks :tasks="tasks" @toggle-reminder="toggleReminder" @delete-task="deleteTask" />
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
         this.tasks = this.tasks.filter((task) => task.id !== id)
 
       }
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task)
     }
   },
   created() {
