@@ -32,7 +32,7 @@ export default {
         id: 2,
         text: 'Qualquer coisa2',
         day: 'dia 12',
-        reminder: true
+        reminder: false
       },
       {
         id: 3,
